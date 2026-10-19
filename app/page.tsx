@@ -4,7 +4,6 @@ import {
   ScrollAnimator,
   Nav,
   GalleryCardClient,
-  ScrollGallery,
 } from "./components";
 
 export default function Home() {
@@ -40,16 +39,9 @@ export default function Home() {
           <div className="scroll-indicator">scroll</div>
         </section>
 
-        {/* ==================== QUOTE BANNER ==================== */}
-        <div className="quote-banner animate-on-scroll">
-          <p className="quote-text">
-            &ldquo;Setiap <span>puncak</span> yang kita capai bersama, bukan
-            hanya tentang ketinggian — tapi tentang{" "}
-            <span>kedalaman</span> yang kita bawa naik.&rdquo;
-          </p>
-        </div>
 
-        {/* ==================== MAIN GALLERY ==================== */}
+
+        {/* ==================== MAIN GALLERY — MASONRY ==================== */}
         <section className="section" id="galeri">
           <div className="section-header animate-on-scroll">
             <span className="section-label">Momen Berdua</span>
@@ -57,94 +49,113 @@ export default function Home() {
             <div className="section-divider" />
           </div>
 
-          <div className="gallery-grid animate-on-scroll">
-            <GalleryCardClient
-              src="/foto/foto-kita-2.jpg"
-              alt="Kita berdua di gunung saat senja"
-              title="Senja di Puncak"
-              caption="Cahaya terakhir hari itu, berdua"
-              featured
-            />
-            <GalleryCardClient
-              src="/foto/foto-kita-3.webp"
-              alt="Kita berdua saat mendaki malam"
-              title="Petualangan Malam"
-              caption="Gelap yang justru membuat kita lebih dekat"
-            />
-            <GalleryCardClient
-              src="/foto/foto-kita-1.jpg"
-              alt="Bayangan kita berdua"
-              title="Bayangan"
-              caption="Bahkan siluet kita selalu berdampingan"
-            />
+          <div className="masonry-gallery animate-on-scroll">
+            <div className="masonry-item masonry-tall">
+              <GalleryCardClient
+                src="/foto/foto-kita-2.jpg"
+                alt="Kita berdua di gunung saat senja"
+                title="Senja di Puncak"
+                caption="Cahaya terakhir hari itu, berdua"
+              />
+            </div>
+            <div className="masonry-item masonry-short">
+              <GalleryCardClient
+                src="/foto/foto-kita-3.webp"
+                alt="Kita berdua saat mendaki malam"
+                title="Petualangan Malam"
+                caption="Gelap yang justru membuat kita lebih dekat"
+              />
+            </div>
+            <div className="masonry-item masonry-medium">
+              <GalleryCardClient
+                src="/foto/foto-kita-1.jpg"
+                alt="Bayangan kita berdua"
+                title="Bayangan"
+                caption="Bahkan siluet kita selalu berdampingan"
+              />
+            </div>
           </div>
         </section>
 
-        {/* ==================== RITA'S GALLERY ==================== */}
+        {/* ==================== RITA — EDITORIAL GRID ==================== */}
         <section className="section">
-          <div className="gallery-row animate-on-scroll">
-            <div className="gallery-row-header">
-              <span className="gallery-row-icon">·</span>
-              <h3 className="gallery-row-title">Rita</h3>
-              <div className="gallery-row-line" />
+          <div className="editorial-section animate-on-scroll">
+            <div className="editorial-header">
+              <div className="editorial-line" />
+              <h3 className="editorial-name">Rita</h3>
+              <div className="editorial-line" />
             </div>
-            <ScrollGallery>
-              <GalleryCardClient
-                src="/foto/foto-rita-1.JPG"
-                alt="Rita di puncak gunung"
-                title="Di Puncak"
-                caption="Lebih tinggi dari awan"
-              />
-              <GalleryCardClient
-                src="/foto/foto-rita-2.JPG"
-                alt="Rita berpose"
-                title="Jeda Sejenak"
-                caption="Momen tenang di tengah perjalanan"
-              />
-              <GalleryCardClient
-                src="/foto/foto-rita-3.JPG"
-                alt="Rita saat pendakian"
-                title="Langkah Demi Langkah"
-                caption="Terus melangkah, terus naik"
-              />
-              <GalleryCardClient
-                src="/foto/foto-rita-4.JPG"
-                alt="Rita di jalur pendakian"
-                title="Menikmati Perjalanan"
-                caption="Bukan tentang sampai, tapi menikmati"
-              />
-              <GalleryCardClient
-                src="/foto/foto-rita-5.JPG"
-                alt="Rita dengan pemandangan"
-                title="Di Atas Awan"
-                caption="Antara langit dan bumi"
-              />
-            </ScrollGallery>
+            <div className="editorial-grid">
+              <div className="editorial-item editorial-item-large">
+                <GalleryCardClient
+                  src="/foto/foto-rita-1.JPG"
+                  alt="Rita di puncak gunung"
+                  title="Di Puncak"
+                  caption="Lebih tinggi dari awan"
+                />
+              </div>
+              <div className="editorial-item">
+                <GalleryCardClient
+                  src="/foto/foto-rita-2.JPG"
+                  alt="Rita berpose"
+                  title="Jeda Sejenak"
+                  caption="Momen tenang di tengah perjalanan"
+                />
+              </div>
+              <div className="editorial-item">
+                <GalleryCardClient
+                  src="/foto/foto-rita-3.JPG"
+                  alt="Rita saat pendakian"
+                  title="Langkah Demi Langkah"
+                  caption="Terus melangkah, terus naik"
+                />
+              </div>
+              <div className="editorial-item editorial-item-wide">
+                <GalleryCardClient
+                  src="/foto/foto-rita-4.JPG"
+                  alt="Rita di jalur pendakian"
+                  title="Menikmati Perjalanan"
+                  caption="Bukan tentang sampai, tapi menikmati"
+                />
+              </div>
+              <div className="editorial-item">
+                <GalleryCardClient
+                  src="/foto/foto-rita-5.JPG"
+                  alt="Rita dengan pemandangan"
+                  title="Di Atas Awan"
+                  caption="Antara langit dan bumi"
+                />
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* ==================== YAFA'S GALLERY ==================== */}
+        {/* ==================== YAFA — SIDE BY SIDE ==================== */}
         <section className="section">
-          <div className="gallery-row animate-on-scroll">
-            <div className="gallery-row-header">
-              <span className="gallery-row-icon">·</span>
-              <h3 className="gallery-row-title">Yafa</h3>
-              <div className="gallery-row-line" />
+          <div className="editorial-section animate-on-scroll">
+            <div className="editorial-header">
+              <div className="editorial-line" />
+              <h3 className="editorial-name">Yafa</h3>
+              <div className="editorial-line" />
             </div>
-            <ScrollGallery>
-              <GalleryCardClient
-                src="/foto/foto-yafa-1.JPG"
-                alt="Yafa di jalur pendakian"
-                title="Memimpin Jalan"
-                caption="Selalu di depan, membuka jalan"
-              />
-              <GalleryCardClient
-                src="/foto/foto-yafa-2.JPG"
-                alt="Yafa istirahat"
-                title="Ketenangan"
-                caption="Tenang di setiap ketinggian"
-              />
-            </ScrollGallery>
+            <div className="duo-grid">
+              <div className="duo-item">
+                <GalleryCardClient
+                  src="/foto/foto-yafa-1.JPG"
+                  alt="Yafa di jalur pendakian"
+                  title="Memimpin Jalan"
+                  caption="Selalu di depan, membuka jalan"
+                />
+              </div>
+              <div className="duo-item">
+                <GalleryCardClient
+                  src="/foto/foto-yafa-2.JPG"
+                  alt="Yafa istirahat"
+                  title="Ketenangan"
+                  caption="Tenang di setiap ketinggian"
+                />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -225,52 +236,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ==================== LOVE LETTER ==================== */}
-        <section className="section" id="surat">
-          <div className="section-header animate-on-scroll">
-            <span className="section-label">Dari Hati</span>
-            <h2 className="section-title">Surat</h2>
-            <div className="section-divider" />
-          </div>
 
-          <div className="love-letter-wrapper animate-on-scroll">
-            <div className="love-letter">
-              <p className="love-letter-text">
-                Untuk kamu yang selalu jadi alasan terkuat untuk terus
-                melangkah —
-                <br />
-                <br />
-                Mendaki gunung bersamamu mengajarkanku banyak hal.
-                Bahwa <em>perjalanan panjang</em> jadi terasa singkat kalau
-                berdua. Bahwa <em>tanjakan paling curam</em> bisa dilalui
-                selama kita saling genggam. Bahwa <em>puncak tertinggi</em>{" "}
-                bukan tentang ketinggian, tapi tentang siapa yang ada di
-                sampingmu saat kamu sampai.
-                <br />
-                <br />
-                Kamu adalah pemandangan terindah yang pernah kutemui — bukan
-                di puncak mana pun, tapi{" "}
-                <em>di setiap langkah yang kita lalui bersama</em>.
-                <br />
-                <br />
-                Terima kasih sudah jadi rumah di tengah perjalanan, jadi
-                hangat di tengah dinginnya malam gunung, dan jadi alasan
-                untuk selalu ingin pulang — kepadamu.
-              </p>
-              <div className="love-letter-signature">
-                — Selamanya
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ==================== QUOTE BANNER 2 ==================== */}
-        <div className="quote-banner animate-on-scroll">
-          <p className="quote-text">
-            &ldquo;Aku tidak butuh puncak tertinggi, selama di puncak mana
-            pun, kamu ada di <span>sampingku</span>.&rdquo;
-          </p>
-        </div>
 
         {/* ==================== FOOTER ==================== */}
         <footer className="footer">
@@ -278,7 +244,7 @@ export default function Home() {
             Ruang Rekam Kita
           </p>
           <p className="footer-date">
-            Terekam, untuk selamanya
+            Developed by Deyafa Arsetya
           </p>
         </footer>
       </ScrollAnimator>

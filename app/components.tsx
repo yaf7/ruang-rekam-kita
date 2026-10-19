@@ -140,14 +140,22 @@ export function ScrollAnimator({ children }: { children: React.ReactNode }) {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+      { threshold: 0.05, rootMargin: "100px 0px 100px 0px" }
     );
 
     const elements = ref.current?.querySelectorAll(".animate-on-scroll");
-    elements?.forEach((el) => observer.observe(el));
+    elements?.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight + 50) {
+        el.classList.add("visible");
+      } else {
+        observer.observe(el);
+      }
+    });
 
     return () => observer.disconnect();
   }, []);
@@ -180,11 +188,6 @@ export function Nav() {
           <li>
             <a href="#perjalanan" className="nav-link">
               Perjalanan
-            </a>
-          </li>
-          <li>
-            <a href="#surat" className="nav-link">
-              Surat
             </a>
           </li>
         </ul>
