@@ -29,7 +29,6 @@ export default function Home() {
               Kita
             </h1>
           </div>
-          <p className="hero-subtitle">Kenangan yang tak akan pudar</p>
           <div className="hero-divider" />
           <p className="hero-tagline">
             Di antara puncak gunung dan langit senja, kita menemukan ruang yang

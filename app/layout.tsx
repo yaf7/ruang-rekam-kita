@@ -15,14 +15,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ruang Rekam Kita",
   description:
-    "Ruang Rekam Kita adalah website kenangan foto romantis petualangan mendaki gunung bersama. Setiap momen indah terekam di sini, selamanya.",
+    "Ruang Rekam Kita",
   keywords: [
     "kenangan",
     "foto",
-    "romantis",
     "gunung",
     "pendakian",
-    "cinta",
     "couple",
   ],
 };
